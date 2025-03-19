@@ -30,3 +30,6 @@ deployer.log
 .classpath
 .settings
 .DS_Store
+
+production.yml
+production-secrets-bundle.yml

@@ -45,13 +45,13 @@ class WhisperServerServiceTest {
 
   static {
     System.setProperty("secrets.bundle.filename",
-        Resources.getResource("config/test-secrets-bundle.yml").getPath());
+        Resources.getResource("config/production-secrets-bundle.yml").getPath());
   }
 
   private static final WebSocketClient webSocketClient = new WebSocketClient();
 
   private static final DropwizardAppExtension<WhisperServerConfiguration> EXTENSION = new DropwizardAppExtension<>(
-      WhisperServerService.class, Resources.getResource("config/test.yml").getPath());
+      WhisperServerService.class, Resources.getResource("config/production.yml").getPath());
 
 
   @AfterAll

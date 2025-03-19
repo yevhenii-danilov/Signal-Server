@@ -25,10 +25,10 @@ public class LocalWhisperServerService {
   public static void main(String[] args) throws Exception {
 
     System.setProperty("secrets.bundle.filename",
-        Resources.getResource("config/local-secrets-bundle.yml").getPath());
+        Resources.getResource("config/production-secrets-bundle.yml").getPath());
 
     final String config = Optional.ofNullable(System.getenv(SIGNAL_SERVER_CONFIG_ENV_VAR))
-        .orElse(Resources.getResource("config/local.yml").getPath());
+        .orElse(Resources.getResource("config/production.yml").getPath());
 
     new WhisperServerService().run("server", config);
   }
