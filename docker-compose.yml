@@ -13,15 +13,8 @@ services:
   datadog:
     container_name: datadog-agent
     image: datadog/agent:latest
-    environment:
-      - DD_API_KEY=4c3165fcb406d26a9678c81db9a423f2 # Your Datadog API key
-      - DD_SITE=datadoghq.eu # For US datacenter
-      - DD_LOGS_ENABLED=true
-      - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
-      - DD_APM_ENABLED=true # Enable APM
-      - DD_DOGSTATSD_NON_LOCAL_TRAFFIC=true # Allow StatsD traffic from other containers
-      - DD_ENV=staging # match environment setting from config
-      - DD_SERVICE=chat # match service from metrics tag
+    env_file:
+      - .env
     ports:
       - "8125:8125/udp" # StatsD intake
       - "10516:10516/tcp" # For logstashtcpsocket destination in config

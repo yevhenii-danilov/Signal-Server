@@ -33,3 +33,5 @@ deployer.log
 
 production.yml
 production-secrets-bundle.yml
+
+.env
