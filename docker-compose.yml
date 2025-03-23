@@ -1,14 +1,14 @@
 services:
-  # signal-server:
-  #   build: .
-  #   container_name: signal-server
-  #   depends_on:
-  #     - datadog
-  #     - redis
-  #   ports:
-  #     - "8080:8080"
-  #   networks:
-  #     - app-network
+  signal-server:
+    build: .
+    container_name: signal-server
+    depends_on:
+      - datadog
+      - redis
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
 
   datadog:
     container_name: datadog-agent
